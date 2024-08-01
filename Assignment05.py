@@ -75,7 +75,7 @@ while True:
         # Print the header row
         print("-" * 50)
         # Convert the list of students dictionaries to a JSON formatted string
-        json_data = json.dumps(students, indent=1)
+        json_data = json.dumps(students, indent=4)
         # Print the JSON formatted data
         print(json_data)
         print("-" * 50)
