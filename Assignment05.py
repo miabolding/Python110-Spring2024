@@ -3,6 +3,7 @@
 # Desc: This assignment demonstrates using dictionaries, files, and exception handling
 # Change Log: (Who, When, What)
 #   MBolding,7/31/2024,Created Script
+#   MBolding, 8/2/2024, Add user input error handling
 # ------------------------------------------------------------------------------------------ #
 
 # Define the Data Constants
@@ -64,8 +65,14 @@ while True:
     # MENU 1: Register a student
     if menu_choice == "1":
         student_first_name = input("Enter the student's first name: ")
+        if not student_first_name.isapha():
+            raise ValueError('First name must be alphabetic')
         student_last_name = input("Enter the student's last name: ")
+        if not student_last_name.isapha():
+            raise ValueError('Last name must be alphabetic')
         course_name = input("Please enter the name of the course: ")
+        if not course_name.isalnum():
+            raise ValueError('course name must be alphanumeric')
         student_data = {'first_name': student_first_name, 'last_name': student_last_name, 'course_name': course_name}
         students.append(student_data)
         continue
